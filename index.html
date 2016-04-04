@@ -16,9 +16,12 @@ $('#price').keypress(function(e) {
     if(e.which == 13) {
       var price = $('#price').val();
       if(price == "NaN"){
-          alert('fuck you, ethan');
+          $('#priceResult').html("fuck you, ethan");
+      }else if(price/4 == NaN){
+          $('#priceResult').html("Do you not know what a number is?");
+      }else{
+        $('#priceResult').html("You have to pay with "+(price/(7.29/168))+" Trident Layers");
       }
-      $('#priceResult').html("You have to pay with "+(price/(7.29/168))+" Trident Layers");
     }
 });
 $('#weight').keypress(function(e) {
