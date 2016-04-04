@@ -12,12 +12,19 @@
 <div id="weightResult"></div>
 
 <script>
+function isInt(value) {
+  if (isNaN(value)) {
+    return false;
+  }
+  var x = parseFloat(value);
+  return (x | 0) === x;
+}
 $('#price').keypress(function(e) {
     if(e.which == 13) {
       var price = $('#price').val();
       if(price == "NaN"){
           $('#priceResult').html("fuck you, ethan");
-      }else if(price/4 == NaN){
+      }else if(!isInt(price)){
           $('#priceResult').html("Do you not know what a number is?");
       }else{
         $('#priceResult').html("You have to pay with "+(price/(7.29/168))+" Trident Layers");
@@ -27,7 +34,14 @@ $('#price').keypress(function(e) {
 $('#weight').keypress(function(e) {
     if(e.which == 13) {
       var weight = $('#weight').val();
-      $('#weightResult').html("You are worth "+(weight*16/0.10476190476)+" Trident Layers");
+       if(weight == "NaN"){
+          $('#weightResult').html("fuck you, ethan");
+      }else if(!isInt(price)){
+          $('#weightResult').html("Do you not know what a number is?");
+      }else{
+          $('#weightResult').html("You are worth "+(weight*16/0.10476190476)+" Trident Layers");
+      }
+    
     }
 });
 </script>
