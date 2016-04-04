@@ -1,0 +1,29 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+
+<h1>Can I pay in Trident Layers?</h1>
+<p>Enter the amount you have to pay in dollars: $<input id="price" type="text"/></p>
+<div id="priceResult"></div>
+
+<h1>You're worth your weight in Trident Layers</h1>
+<p>Enter your weight in pounds <input id="weight" type="text"/> lbs</p>
+<div id="weightResult"></div>
+
+<script>
+$('#price').keypress(function(e) {
+    if(e.which == 13) {
+      var price = $('#price').val();
+      $('#priceResult').html("You have to pay with "+(price/0.04)+" Trident Layers");
+    }
+});
+$('#weight').keypress(function(e) {
+    if(e.which == 13) {
+      var weight = $('#weight').val();
+      $('#weightResult').html("You are worth "+(weight*16/0.10476190476)+" Trident Layers");
+    }
+});
+</script>
+
+</html>
