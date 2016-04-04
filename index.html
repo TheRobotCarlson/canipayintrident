@@ -36,7 +36,7 @@ $('#weight').keypress(function(e) {
       var weight = $('#weight').val();
        if(weight == "NaN"){
           $('#weightResult').html("fuck you, ethan");
-      }else if(!isInt(price)){
+      }else if(!isInt(weight)){
           $('#weightResult').html("Do you not know what a number is?");
       }else{
           $('#weightResult').html("You are worth "+(weight*16/0.10476190476)+" Trident Layers");
